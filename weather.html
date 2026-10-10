@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="weather.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-default">
+
+  <div class="clouds-container">
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+  </div>
+
+  <div class="main-wrapper">
+    <h1 class="outside-title">Weather Forecast</h1>
+
+    <main class="app-card">
+      <div class="header-bar">
+        <div class="unit-toggle">
+          <button id="unitC" class="unit-btn active" onclick="setUnit('metric')">°C</button>
+          <span class="unit-divider">|</span>
+          <button id="unitF" class="unit-btn" onclick="setUnit('imperial')">°F</button>
+        </div>
+      </div>
+      
+      <div class="search-container">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="cityInput" placeholder="Search for a city..." autocomplete="off">
+          <button onclick="getWeather()" id="searchBtn">Search</button>
+        </div>
+        <div id="autocompleteList" class="autocomplete-items"></div>
+      </div>
+
+      <div id="weatherResult"></div>
+    </main>
+  </div>
+
+  <script src="weather.js"></script>
+</body>
+</html>
